@@ -40,7 +40,7 @@ Biz bilgisayara bir ifade veririz. Bilgisayar bunu yorumlayıcı (interpreter) s
 ;1200
 ```
 
-![Untitled](SICP%208dceb8ed39974f8fb1dc0bb5d6a7bc1c/Untitled.png)
+![Untitled](Chapter01/Untitled.png)
 
 Gerçek hayattaki birçok dil gibi programlama dillerinin de yazılışında bazı kurallar vardır. Kullandığımı Scheme (ya da Lisp de denilebilir) prefix yani ön ekli bir dildir. Öncelikle yapılmasını istediğin işlemi (operator) belirtip sonrasında o işlemin neleri işleyeceğini (operand) verirsiniz. Örneğin yukarıda iki sayıyı toplamak istiyorsak öncelikle amacımızı belirten + işaretini koyduk sonrasında da hangi sayılar arasında bu işlemi gerçekleştireceğimizi belirttik.  Ön ekli dillerde iç içe (nested) ifadeler yazmak da ayrıca kolaydır. Parantezler arasındaki işlemler gerçekleştirilir, parantezin kapanmadan önce ne kadar boşluğa sahip olduğu önemli değil. Bilgisayar parantezin açıldığı ve kapandığı yerleri tespit edip arasındaki işlemleri gerçekleştirir.
 
@@ -106,7 +106,7 @@ Matematikteki işlem sırası gibi programlamada da ifadeleri hesaplama belli bi
 
 ```
 
-![Untitled](SICP%208dceb8ed39974f8fb1dc0bb5d6a7bc1c/Untitled%201.png)
+![Untitled](Chapter01/Untitled%201.png)
 
 ### Bileşik prosedürler
 
@@ -218,7 +218,7 @@ Bir başka hesaplama yönteminde de hesaplama yapmadan önce tüm değerler yerl
 
 Hepimiz şöyle bir fonksiyona alışkınızdır. Bu mutlak değer fonksiyonu. “eğer ki sayı 0’dan küçükse eksi ile çarp, eğer 0’a eşit ise 0 yaz, 0’dan büyük ise olduğu gibi yaz.” anlamına gelmektedir. Bu “eğer” koşulunun programlamadaki karşılığı da koşul ifadeleridir (conditional expressions), buradaki “sayı 0’a eşit mi?” ise bizim yargımız ya da önermemiz (predicate) olarak adlandırılır.
 
-![Untitled](SICP%208dceb8ed39974f8fb1dc0bb5d6a7bc1c/Untitled%202.png)
+![Untitled](Chapter01/Untitled%202.png)
 
 ```scheme
 (define (mutlak-deger x)
@@ -303,7 +303,7 @@ yani y sayısı sıfırdan farklı ise, iki tarafın da karesini alarak x’in k
 
 Bu bizim kullandığımız ve bildiğimiz bir şey fakat bunu uygulayabilmek için hem x hem de y değerini bilmemiz gerekiyor. Peki ya yalnızca √***2*** gibi hesaplanmayı bekleyen bir sayımız olsaydı ne yapacaktık? 
 
-![Untitled](SICP%208dceb8ed39974f8fb1dc0bb5d6a7bc1c/Untitled%203.png)
+![Untitled](Chapter01/Untitled%203.png)
 
 Bu işlemleri tekrarlayacaktık. Bu işlem ne yapıyor. 
 
@@ -372,7 +372,7 @@ good-enough? yani yeterince iyi mi değil mi kontrolü ise biraz bize kalmış. 
 
 ### Procedures as Black-box Abstractions
 
-![Untitled](SICP%208dceb8ed39974f8fb1dc0bb5d6a7bc1c/Untitled%204.png)
+![Untitled](Chapter01/Untitled%204.png)
 
 Sqrt bizim ilk prosedürlerimizden biri, gördüğümüz üzere de sqrt-iter prosedürü özyinelemeli (recursive) bir prosedür.
 
@@ -474,7 +474,7 @@ Yukarıdaki formülü bir prosedür olarak yazmaya çalışırsak da
 
 Prosedürün nasıl çalıştığını anlamak için substitution yani yerine koyma modelini uygulayabiliriz.
 
-![Untitled](SICP%208dceb8ed39974f8fb1dc0bb5d6a7bc1c/Untitled%205.png)
+![Untitled](Chapter01/Untitled%205.png)
 
 Bundan farklı olarak öncelikle 1 ve 2’yi çarpıp sonrasında çıkan sonuç ile 3’ü çarpabilirdik. Sonrasında çıkan sonucu da 4 ile çarpardık ve istenilen sayıya kadar bu işlemi böyle devam ettirebilirdik. 
 
@@ -497,7 +497,7 @@ counter← counter + 1
 
 Bunun da nasıl çalıştığını anlamak için yerine koyma modelini kullanalım 
 
-![Untitled](SICP%208dceb8ed39974f8fb1dc0bb5d6a7bc1c/Untitled%206.png)
+![Untitled](Chapter01/Untitled%206.png)
 
 Bu iki process aynı sonucu verseler de çalışma adımları biraz farklı. Görsel olarak baktığımızda da “şekil” olarak bir farkları var. İlk şekle bakıldığında onun bir okun ucuna benzediğini görebiliriz. Bu bir deferred operation (ertelenmiş operasyon). 
 Yani öncelikle tüm parantezleri açıyor ve içerisindeki değerleri yerlerine koyuyor, bu işleme recursive (özyinelemeli) process denir. Burada çarpım işlemlerinin uzunluğu birçok bilginin aynı anda tutulmasını gerektirir ve tutulması gereken bu bilgiler lineer olarak artmaktadır. Bu sebepten dolayı da LINEAR RECURSIVE PROCESS olarak adlandırılır.
@@ -514,7 +514,7 @@ Iteration yönteminde her adımda direktifler açıktır, hangi verilerle neler 
 
 Bir başka hesaplama kalıbı ise tree recursion, özyineleme ağacıdır. Fibonacci sayıları üzerinden örnek verecek olursak bu sayılar 0,1,1,2,3,5,8,13,21… şeklinde kendisinden önceki iki sayının toplamı şeklinde ilerleyen bir fonksiyondur   
 
-![Untitled](SICP%208dceb8ed39974f8fb1dc0bb5d6a7bc1c/Untitled%207.png)
+![Untitled](Chapter01/Untitled%207.png)
 
 Bunu recursive prosedür olarak yazarsak da 
 
@@ -526,7 +526,7 @@ Bunu recursive prosedür olarak yazarsak da
                  (fib (- n 2))))))
 ```
 
-![Untitled](SICP%208dceb8ed39974f8fb1dc0bb5d6a7bc1c/Untitled%208.png)
+![Untitled](Chapter01/Untitled%208.png)
 
 Fakat bu yöntem fibonacci sayılarını hesaplamak için berbat bir yöntemdir. Çünkü fib3 sağda ve solda 2 kez tekrar tekrar hesaplanıyor. Eğer ki sayımız 5 değil de daha büyük bir sayı olsaydı o zaman iş yükü çok daha gereksiz bir şekilde artacaktı. Bu yöntemdeki adım sayılar lineer değil üstel (exponentially) olarak artmaktadır.
 
@@ -598,7 +598,7 @@ Problemimizin boyutu n olsun, R(n)’de process’imizin n boyutundaki bir probl
 
 Üstel bir sayının hesaplaması argüman olarak b taban sayısını, pozitif bir üstel olan n’i alır ve b’nin n. üsteli olarak hesaplanır.
 
-![image.png](SICP%208dceb8ed39974f8fb1dc0bb5d6a7bc1c/image.png)
+![image.png](Chapter01/image.png)
 
  Bunu hesaplamak için recursive bir tanımlama kullanılabilir. 
 
@@ -627,9 +627,9 @@ Bu versiyonda `Q(n)`adım için `Q(1)`space gerekli.
 
 Bu işlemi daha hızlı yapabilmek için kare hesaplama yöntemini de kullanabiliriz. Örneğin b’nin 8. kuvvetini hesaplamak istiyorsak 8’in yarısı olan 4’ü alırız ve b’nin 4. kuvvetini alıp sonrasında sonucun karesini alırız. 
 
-![image.png](SICP%208dceb8ed39974f8fb1dc0bb5d6a7bc1c/image%201.png)
+![image.png](Chapter01/image%201.png)
 
-![image.png](SICP%208dceb8ed39974f8fb1dc0bb5d6a7bc1c/image%202.png)
+![image.png](Chapter01/image%202.png)
 
 ```
 (define (fast-expt b n)
