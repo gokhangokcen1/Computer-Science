@@ -23,3 +23,4 @@ Buradaki add (toplama), mul (çarpma) farkli prosedürlerdir. Amacımız daha ö
 > Karmaşık verilerle başa çıkmada önemli bir fikir, kullandığımız prosedürlerin sadece ilkel veri nesnelerini değil, aynı zamanda karmaşık veri nesnelerini de birleştirmemize izin vermesi gerektiğidir.
 
 ## Veri Soyutlamaya Giriş 
+--
